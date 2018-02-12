@@ -21,4 +21,13 @@ var player18: [String: Any] = ["Name": "Herschel Krustofski", "Height": 45, "Soc
 // Single collection created to hold all the players in
 var players = [player01, player02, player03, player04, player05, player06, player07, player08, player09, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
+// Collection varibales to store the players in to a team
+var teamSharks: [[String: Any]] = []
+var teamRaptors: [[String: Any]] = []
+var teamDragons: [[String: Any]] = []
+
+// Variable to hold both experienced and non experienced players
+var soccerExperience: [[String: Any]] = []
+var noSoccerExperience: [[String: Any]] = []
+
 
