@@ -27,7 +27,38 @@ var teamRaptors: [[String: Any]] = []
 var teamDragons: [[String: Any]] = []
 
 // Variable to hold both experienced and non experienced players
-var soccerExperience: [[String: Any]] = []
+var hasSccerExperience: [[String: Any]] = []
 var noSoccerExperience: [[String: Any]] = []
+
+// Sorting through players to divide them between players with and without experience
+for player in players {
+    if let isExperienced = player["Soccer experience"] as? Bool {
+        if isExperienced == true {
+            hasSccerExperience.append(player)
+        }   else {
+            noSoccerExperience.append(player)
+        }
+    }
+}
+
+// Logic to iterate through all players and divide them in to teams
+func sortByExperience(for player: [String: Any]) {
+    if teamSharks.count <= teamDragons.count && teamSharks.count <= teamRaptors.count {
+        teamSharks.append(player)
+    }   else if teamRaptors.count <= teamSharks.count && teamRaptors.count <= teamDragons.count {
+        teamRaptors.append(player)
+    }   else if teamDragons.count <= teamSharks.count && teamDragons.count <= teamRaptors.count {
+        teamDragons.append(player)
+    }
+}
+
+// Dividing teams by experience
+for player in hasSccerExperience {
+    sortByExperience(for: player)
+}
+
+for player in noSoccerExperience {
+    sortByExperience(for: player)
+}
 
 
