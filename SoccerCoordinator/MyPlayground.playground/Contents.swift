@@ -56,7 +56,6 @@ func sortByExperience(for player: [String: Any]) {
 for player in hasSccerExperience {
     sortByExperience(for: player)
 }
-
 for player in noSoccerExperience {
     sortByExperience(for: player)
 }
@@ -67,11 +66,11 @@ let sharksPractice = ["Date": "17th March", "Time": "3pm"]
 let raptorsPractice = ["Date": "18th March", "Time": "1pm"]
 
 // Letters collection variable
+var letters: [String] = []
+
 func personalisedLetter() {
-    var letters: [String] = []
-    
     for player in teamSharks {
-        if let guardianName = player["Guardinas name"],
+        if let guardianName = player["Guardians Names"],
         let playersName = player["Name"],
         let practiceTime = sharksPractice["Time"],
             let practiceDate = sharksPractice["Date"] {
@@ -83,7 +82,7 @@ func personalisedLetter() {
     }
     
     for player in teamRaptors {
-        if let guardiansName = player["Guardians name"],
+        if let guardiansName = player["Guardians Names"],
         let playersName = player["Name"],
         let practiceTime = raptorsPractice["Time"],
             let practiceDate = raptorsPractice["Date"] {
@@ -93,9 +92,9 @@ func personalisedLetter() {
             return
         }
     }
-
+ 
     for player in teamDragons {
-        if let guardiansName = player["Guardians name"],
+        if let guardiansName = player["Guardians Names"],
         let playersName = player["Name"],
         let practcieTime = dragonsPractice["Time"],
             let practiceDate = dragonsPractice["Date"] {
@@ -110,3 +109,4 @@ func personalisedLetter() {
     }
 }
 personalisedLetter()
+
