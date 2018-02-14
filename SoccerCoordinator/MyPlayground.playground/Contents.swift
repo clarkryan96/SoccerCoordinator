@@ -61,4 +61,52 @@ for player in noSoccerExperience {
     sortByExperience(for: player)
 }
 
+// Practice dates
+let dragonsPractice = ["Date": "17th March", "Time": "1pm"]
+let sharksPractice = ["Date": "17th March", "Time": "3pm"]
+let raptorsPractice = ["Date": "18th March", "Time": "1pm"]
 
+// Letters collection variable
+func personalisedLetter() {
+    var letters: [String] = []
+    
+    for player in teamSharks {
+        if let guardianName = player["Guardinas name"],
+        let playersName = player["Name"],
+        let practiceTime = sharksPractice["Time"],
+            let practiceDate = sharksPractice["Date"] {
+            let letter = "To \(guardianName), Your child \(playersName) has been selected to play for the Sharks. The first trainning session will take place on the \(practiceDate) at \(practiceTime). We look forward to seeing you there!"
+            letters.append(letter)
+        }   else {
+            return
+        }
+    }
+    
+    for player in teamRaptors {
+        if let guardiansName = player["Guardians name"],
+        let playersName = player["Name"],
+        let practiceTime = raptorsPractice["Time"],
+            let practiceDate = raptorsPractice["Date"] {
+            let letter = "To \(guardiansName), Your child \(playersName) has been selected to play for the Raptors. The first trainning session will take place on the \(practiceDate) at \(practiceTime). We look forward to seeing you there!"
+            letters.append(letter)
+        }   else {
+            return
+        }
+    }
+
+    for player in teamDragons {
+        if let guardiansName = player["Guardians name"],
+        let playersName = player["Name"],
+        let practcieTime = dragonsPractice["Time"],
+            let practiceDate = dragonsPractice["Date"] {
+            let letter = "To \(guardiansName), Your child \(playersName) has been selected to play for the Dragons. The first trainning session will take place on the \(practiceDate) at \(practcieTime). We look forward to seeing you there!"
+            letters.append(letter)
+        }   else {
+            return
+        }
+    }
+    for letter in letters {
+        print(letter)
+    }
+}
+personalisedLetter()
